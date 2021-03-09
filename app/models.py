@@ -15,9 +15,9 @@ class UserProfile(db.Model):
     username = db.Column(db.String(80), unique=True)
     password=db.Column(db.String(255))
 
-    def __init__(self, username, email):
-        self.firstname =firstname
-        self.lastname =lastname
+    def __init__(self, username, email,first_name, last_name, password):
+        self.first_name =first_name
+        self.last_name =last_name
         self.username = username
         self.email = email
         self.password=generate_password_hash(password, method='pbkdf2:sha256')
